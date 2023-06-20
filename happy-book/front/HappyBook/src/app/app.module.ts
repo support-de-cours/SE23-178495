@@ -3,20 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './pages/homepage/homepage.component';
-import { BooksComponent } from './pages/books/books.component';
+import { HomepageModule } from './pages/homepage/homepage.module';
+import { BooksModule } from './pages/books/books.module';
+import { LifecycleExampleComponent } from './lifecycle-example/lifecycle-example.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent,
-    BooksComponent,
+    LifecycleExampleComponent,
   ],
   imports: [
     BrowserModule,
 
+    HomepageModule,
+    BooksModule,
+
     // Toujours à la fin des "imports"
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

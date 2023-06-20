@@ -1,35 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomepageComponent } from './pages/homepage/homepage.component';
-import { BooksComponent } from './pages/books/books.component';
 
 const routes: Routes = [
 
-  // Homepage
-  // > site.com/
-  {
-    path: '',
-    component: HomepageComponent
-  },
-
   // Books
   // > site.com/nos-livres
-  {
-    path: 'nos-livres',
-    component: BooksComponent
-  },
+  // {
+  //   path: 'nos-livres',
+  //   component: BooksComponent
+  // },
 
 
   // Default Route
+  {
+    path: '', // > capture site.com/
+    redirectTo: 'homepage', // > redirige vers site.com/homepage
+    pathMatch: 'full'
+  },
 
   // WildCard Route
   // 404/NotFound
-  // > site.com/gsjhfgsjfgsjhfg
+  // > site.com/truc
   {
     path: '**',
     loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundModule)
   }
-
 ];
 
 @NgModule({
