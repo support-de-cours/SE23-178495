@@ -1,1 +1,13 @@
-<p>Books read works!</p>
+<ng-container *ngIf="!book; else BookTmpl">
+    Book loading...
+</ng-container>
+
+<ng-template #BookTmpl>
+    <h2>{{ book.title }}</h2>
+    
+    <p>{{ book.description }}</p>
+    
+    <div>
+        price: {{ book.price }}
+    </div>
+</ng-template>

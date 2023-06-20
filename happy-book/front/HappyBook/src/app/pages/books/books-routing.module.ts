@@ -8,11 +8,44 @@ import { DeleteComponent } from './delete/delete.component';
 
 const routes: Routes = [
 
-  // > site.com/books
-  // > site.com/book
-  // > site.com/book/42
-  // > site.com/book/42/edit
-  // > site.com/book/42/delete
+
+  // // Liste des livres (index)
+  // // > site.com/books
+  // // > site.com/nos-livres
+  // {
+  //   path: 'nos-livres',
+  //   component: IndexComponent
+  // },
+
+  // // Creation d'un livre (create)
+  // // > site.com/book
+  // {
+  //   path: 'livre',
+  //   component: CreateComponent
+  // },
+
+  // // Detail d'un livre (read)
+  // // > site.com/book/42
+  // {
+  //   path: 'livre/:id',
+  //   component: ReadComponent
+  // },
+
+  // // Modification d'un livre (update)
+  // // > site.com/book/42/edit
+  // {
+  //   path: 'livre/:id/edit',
+  //   component: UpdateComponent
+  // },
+  
+  // // Suppression d'un livre (delete)
+  // // > site.com/book/42/delete
+  // {
+  //   path: 'livre/:id/delete',
+  //   component: DeleteComponent
+  // }
+
+
 
   // Liste des livres (index)
   // > site.com/books
@@ -22,33 +55,58 @@ const routes: Routes = [
     component: IndexComponent
   },
 
+
   // Creation d'un livre (create)
-  // > site.com/book
+  // > site.com/livre
+  // > site.com/livre/
   {
     path: 'livre',
-    component: CreateComponent
+    children: [
+      {
+        path: '',
+        component: CreateComponent
+      },
+      {
+        path: ':id',
+        children: [
+
+          // Detail d'un livre (read)
+          // > site.com/book/42
+          {
+            path: '',
+            component: ReadComponent
+          },
+
+          // Modification d'un livre (update)
+          // > site.com/book/42/edit
+          {
+            path: 'edit',
+            component: UpdateComponent
+          },
+
+          // Suppression d'un livre (delete)
+          // > site.com/book/42/delete
+          {
+            path: 'delete',
+            component: DeleteComponent
+          }
+        ]
+      },
+    ]
   },
 
-  // Detail d'un livre (read)
-  // > site.com/book/42
-  {
-    path: 'livre/:id',
-    component: ReadComponent
-  },
+  // > site.com/books
 
-  // Modification d'un livre (update)
-  // > site.com/book/42/edit
-  {
-    path: 'livre/:id/edit',
-    component: UpdateComponent
-  },
-  
-  // Suppression d'un livre (delete)
-  // > site.com/book/42/delete
-  {
-    path: 'livre/:id/delete',
-    component: DeleteComponent
-  }
+  // > site.com/book
+  // > site.com/book/
+
+
+  // > site.com/book/id
+
+  // > site.com/book/id/read    read
+  // > site.com/book/id/edit    edit
+  // > site.com/book/id/delete  delete
+
 
 ];
 

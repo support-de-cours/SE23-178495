@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HomepageModule } from './pages/homepage/homepage.module';
 import { BooksModule } from './pages/books/books.module';
 import { LifecycleExampleComponent } from './lifecycle-example/lifecycle-example.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ApiInterceptor } from './core/interceptors/api.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { LifecycleExampleComponent } from './lifecycle-example/lifecycle-example
     // Toujours à la fin des "imports"
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

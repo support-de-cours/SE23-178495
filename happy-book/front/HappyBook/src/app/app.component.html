@@ -18,15 +18,10 @@
         <ul>
             <li><a routerLink="/">Accueil</a></li>
             <li><a routerLink="/nos-livres">Nos livres</a></li>
+            <li><a [routerLink]="['/nos-livres']">Nos livres</a></li>
         </ul>
     </nav>
     
     <hr>
     <router-outlet></router-outlet>
-
-    <hr>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/jfKfPfyJRdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
-    <app-lifecycle-example title="Hello John"></app-lifecycle-example>
 </div>
