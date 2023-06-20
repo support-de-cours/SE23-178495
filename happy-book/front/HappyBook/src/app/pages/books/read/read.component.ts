@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { environment } from 'src/environments/environment';
+import { BookService } from '../services/book.service';
 
 @Component({
   selector: 'app-read',
@@ -15,12 +15,16 @@ export class ReadComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private bookService: BookService
   ){
     this.bookId = Number(this.route.snapshot.paramMap.get('id'));
   }
 
   ngOnInit(): void {
+
+    console.log( this.bookService.books );
+    
     setTimeout(() => {
 
       this.http

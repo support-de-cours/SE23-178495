@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { BookService } from '../services/book.service';
 
 @Component({
   selector: 'app-index',
@@ -12,7 +12,8 @@ export class IndexComponent implements OnInit {
   public books: any = [];
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private bookService: BookService
   ){}
 
   ngOnInit(): void
@@ -20,9 +21,9 @@ export class IndexComponent implements OnInit {
     this.http
       .get("books")
       .subscribe(response => {
-
         this.books = response;
-        
+        // this.bookService.setBooks( response );
+        this.bookService.books = response;
       });
   }
 

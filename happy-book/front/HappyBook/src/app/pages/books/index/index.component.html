@@ -1,5 +1,7 @@
 <h2>Nos livres</h2>
 
+<a routerLink="/livre" class="btn btn-sm btn-primary">Ajouter un livre</a>
+
 <ul>
     <li *ngFor="let book of books">
         <a [routerLink]="['/livre', book.id]">{{ book.title }}</a>
