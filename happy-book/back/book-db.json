@@ -1,0 +1,34 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "My awesome book",
+      "description": "This is an awesome book.. read it !",
+      "price": 99.99
+    },
+    {
+      "id": 42,
+      "title": "Don't panic",
+      "price": 42
+    },
+    {
+      "title": "My Happy Book",
+      "description": "This is a happy book",
+      "price": 1.99,
+      "id": 43
+    },
+    {
+      "truc": "My Happy Book",
+      "machin": "This is a happy book",
+      "bidule": 1.99,
+      "id": 44
+    },
+    {
+      "truc": "My Happy Book",
+      "machin": "This is a happy book",
+      "bidule": 1.99,
+      "description": "plop",
+      "id": 45
+    }
+  ]
+}

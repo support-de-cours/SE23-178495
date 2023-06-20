@@ -1,0 +1,23 @@
+<p>mon-composant works!</p>
+
+<fieldset>
+    <legend>Message (dataBindig) :</legend>
+
+    <div>{{ message }}</div>
+</fieldset>
+
+<fieldset>
+    <legend>Image (propertyBinding) :</legend>
+
+    <!-- Data Binding : pas la bonne pratique -->
+    <!-- <img src="{{ imageUrl }}" alt="lorem"> -->
+
+    <!-- Property Binding -->
+    <img [src]="imageUrl" alt="lorem">
+</fieldset>
+
+<fieldset>
+    <legend>Modifier le message (eventBinding) :</legend>
+
+    <button type="button" (click)="changerMessage()">Changer le message</button>
+</fieldset>

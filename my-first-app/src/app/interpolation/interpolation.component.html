@@ -1,0 +1,17 @@
+<h2>Interpolation</h2>
+
+<h3>DataBinding</h3>
+<div>{{ message }}</div>
+
+
+<h3>PropertyBinding</h3>
+<img [src]="image_source" alt="mon image">
+
+
+<h3>EventBinding</h3>
+<button (click)="changeHello()">Change Hello</button>
+
+
+<h3>TwoWayBinding</h3>
+<div>{{ username }}</div>
+<input type="text" [(ngModel)]="username">

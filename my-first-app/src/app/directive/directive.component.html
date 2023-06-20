@@ -1,0 +1,50 @@
+<h2>Les directives</h2>
+
+
+<h3>ngIf</h3>
+
+<button (click)="changeLoggedState()">Change Login State</button>
+
+<div *ngIf="isLoggedIn">L'utilisateur est identifié</div>
+
+
+<h3>ngFor</h3>
+
+<ul>
+    <li *ngFor="let fruit of fruits">
+        {{ fruit }}
+    </li>
+</ul>
+
+<hr>
+
+<img *ngFor="let source of images" [src]="source" alt="xxx">
+
+
+<h3>ngSwitch</h3>
+
+<div [ngSwitch]="variable">
+    <div *ngSwitchCase="'option1'">
+      Contenu pour l'option 1
+    </div>
+    <div *ngSwitchCase="'option2'">
+      Contenu pour l'option 2
+    </div>
+    <div *ngSwitchCase="'option3'">
+      Contenu pour l'option 3
+    </div>
+    <div *ngSwitchDefault>
+      Contenu par défaut lorsque la variable ne correspond à aucune des options précédentes
+    </div>
+</div>
+
+
+<h3>Directives d'attribut</h3>
+
+<div [ngStyle]="{ 'color': textColor, 'font-size': fontSize }">Contenu avec style dynamique</div>
+
+
+
+<h3>Directive personnalisé</h3>
+<div appMonTextRouge>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, cupiditate illum? Quia voluptas, accusamus labore ad officiis obcaecati cumque, esse dolorem tempore cum quaerat animi beatae sint id ex quo?</div>
+

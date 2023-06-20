@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+// .page-content {
+//     padding: 80px;
+//     border: 8px solid red;
+//     background-color: green;
+//     color: white;
+//     font-size: 24px;
+// }
+
+// .page-content_subcontent {
+//     color: red;
+//     font-size: 12px;
+// }
+
+// $main-padding: 80px;
+// $color-red: red;
+// $color-green: green;
+// $color-white: white;
+
+// .page-content {
+//     $base-size: $main-padding/10;
+
+//     padding: $main-padding;
+//     border: $base-size solid $color-red;
+//     background-color: $color-green;
+//     color: $color-white;
+//     font-size: $base-size*3;
+
+//     &_subcontent {
+//         color: $color-red;
+//         font-size: $base-size*2;
+//     }
+// }
+
+
+// .card {
+
+//     &_header{
+//         border: 1px solid black;
+
+//         &--title {
+//             color: pink;
+//         }
+//     }
+//     &_body{
+//         border: 1px solid black;
+//     }
+//     &_footer{
+//         border: 1px solid black;
+//     }
+// }
+
+
+// .articles {
+//     & .card {
+    
+//         &_header{
+//             border: 1px solid black;
+    
+//             &--title {
+//                 color: green;
+//             }
+//         }
+//     }
+// }
