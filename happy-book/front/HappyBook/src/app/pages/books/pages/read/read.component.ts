@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BookService } from '../services/book.service';
+import { BookService } from '../../services/book.service';
 
 @Component({
   selector: 'app-read',

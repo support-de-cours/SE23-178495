@@ -1,0 +1,78 @@
+<h2>Ajouter un livre</h2>
+
+<!-- Template Driven Form -->
+
+<!-- 
+<form (submit)="sendNewBook()">
+
+    <div class="mb-3">
+        <label for="champ_title" hidden>Titre du livre</label>
+        <input type="text" name="param_title" id="champ_title" [(ngModel)]="title" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label for="description">Description du livre</label>
+        <textarea name="description" id="description" [(ngModel)]="description" class="form-control"></textarea>
+    </div>
+
+    <button type="submit">Envoyer</button>
+</form>
+
+<hr>
+
+<div class="mb-3">
+    <strong>Titre du livre</strong>: {{ title }}
+</div>
+
+-->
+
+
+
+
+<!-- Reactive Form -->
+
+<!-- 
+<form (submit)="sendNewBook()">
+
+    <div class="mb-3">
+        <label for="title">Titre du livre</label>
+        <input type="text" name="title" id="title" [formControl]="title" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label for="description">Description du livre</label>
+        <textarea name="description" id="description" [formControl]="description" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="price">Prix du livre</label>
+        <input type="number" step="0.01" name="price" id="price" [formControl]="price" class="form-control">
+    </div>
+
+    <button type="submit">Envoyer</button>
+
+</form>
+-->
+
+
+<form [formGroup]="bookForm" (submit)="sendNewBook()">
+
+    <div class="mb-3">
+        <label for="title">Titre du livre</label>
+        <input type="text" name="title" id="title" formControlName="title" class="form-control" [ngClass]="{'is-invalid': bookForm.controls.title.touched && !bookForm.controls.title.valid}">
+        <p *ngIf="!bookForm.controls.title.valid" class="invalid-feedback">Le titre est obligatoire</p>
+    </div>
+
+    <div class="mb-3">
+        <label for="description">Description du livre</label>
+        <textarea name="description" id="description" formControlName="description" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="price">Prix du livre</label>
+        <input type="number" step="0.01" name="price" id="price" formControlName="price" class="form-control">
+    </div>
+
+    <button type="submit" [disabled]="!bookForm.valid">Envoyer</button>
+
+</form>

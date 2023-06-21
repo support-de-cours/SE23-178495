@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BookService } from '../services/book.service';
+import { BookService } from '../../services/book.service';
 
 @Component({
   selector: 'app-index',

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IndexComponent } from './index/index.component';
-import { CreateComponent } from './create/create.component';
-import { ReadComponent } from './read/read.component';
-import { UpdateComponent } from './update/update.component';
-import { DeleteComponent } from './delete/delete.component';
+import { IndexComponent } from './pages/index/index.component';
+import { CreateComponent } from './pages/create/create.component';
+import { ReadComponent } from './pages/read/read.component';
+import { UpdateComponent } from './pages/update/update.component';
+import { DeleteComponent } from './pages/delete/delete.component';
 
 const routes: Routes = [
 
