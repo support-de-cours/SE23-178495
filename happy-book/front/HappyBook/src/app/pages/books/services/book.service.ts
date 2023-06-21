@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +7,11 @@ import { Injectable } from '@angular/core';
 export class BookService {
 
   private _books: any = [];
+  private _myObservableBooks:BehaviorSubject<any> = new BehaviorSubject<any>([
+    "l1", 
+    "l2", 
+    "l3", 
+  ])
 
   constructor() { }
 
@@ -32,5 +38,14 @@ export class BookService {
   // {
   //   return this._books;
   // }
+
+  set myObservableBooks(someData: any)
+  {
+    this._myObservableBooks.next(someData);
+  }
+  get myObservableBooks(): BehaviorSubject<any>
+  {
+    return this._myObservableBooks;
+  }
 
 }

@@ -10,11 +10,15 @@ import { BookService } from '../../services/book.service';
 export class IndexComponent implements OnInit {
 
   public books: any = [];
+  public observableBooks: any = [];
 
   constructor(
     private http: HttpClient,
     private bookService: BookService
-  ){}
+  ){
+    this.bookService.myObservableBooks
+      .subscribe(data => this.observableBooks = data);
+  }
 
   ngOnInit(): void
   {
@@ -25,6 +29,11 @@ export class IndexComponent implements OnInit {
         // this.bookService.setBooks( response );
         this.bookService.books = response;
       });
+  }
+
+  changeObservable()
+  {
+    this.bookService.myObservableBooks = ["l4","l5","l6"];
   }
 
 }

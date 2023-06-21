@@ -7,3 +7,13 @@
         <a [routerLink]="['/livre', book.id]">{{ book.title }}</a>
     </li>
 </ul>
+
+<hr>
+
+<ul>
+    <li *ngFor="let book of observableBooks">
+        {{ book }}
+    </li>
+</ul>
+
+<button type="button" (click)="changeObservable()">Chnage</button>
