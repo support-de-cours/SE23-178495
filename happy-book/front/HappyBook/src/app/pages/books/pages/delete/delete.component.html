@@ -1,1 +1,16 @@
-<p>Books delete works!</p>
+<h2>Supprimer un livre</h2>
+
+<ng-container *ngIf="!book; else BookTmpl">
+    Book loading...
+</ng-container>
+
+<ng-template #BookTmpl>
+    
+    <div class="alert alert-danger">
+        Confirmer la suppression du livre {{ book.title }}
+    </div>
+
+    <button type="button" class="btn btn-sm btn-danger" (click)="proceed()">Oui</button>
+    <a [routerLink]="['/livre', book.id]" class="btn btn-sm btn-primary">Non</a>
+
+</ng-template>

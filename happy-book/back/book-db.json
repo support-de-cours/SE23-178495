@@ -31,15 +31,9 @@
       "id": 45
     },
     {
-      "title": "Livre test",
-      "description": "this is a test",
-      "price": 12,
-      "id": 46
-    },
-    {
-      "title": "test again",
+      "title": "test again (updated)",
       "description": "azertyui",
-      "price": 65,
+      "price": 42,
       "id": 47
     }
   ]
