@@ -29,6 +29,18 @@
       "bidule": 1.99,
       "description": "plop",
       "id": 45
+    },
+    {
+      "title": "Livre test",
+      "description": "this is a test",
+      "price": 12,
+      "id": 46
+    },
+    {
+      "title": "test again",
+      "description": "azertyui",
+      "price": 65,
+      "id": 47
     }
   ]
 }

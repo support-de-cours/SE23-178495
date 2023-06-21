@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -69,19 +71,28 @@ export class CreateComponent {
     ])
   });
 
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ){}
+
 
   sendNewBook(): void
-  {
-    console.log(this.bookForm.controls.title);
-    
+  {    
     if (this.bookForm.valid)
     {
-      console.log( this.bookForm.value );
-    }
-    else
-    {
-      alert("Il y a des erreur");
+      // console.log( this.bookForm.value );
+      this.http
+        .post("books", this.bookForm.value)
+        .subscribe((response: any) => {
+          // console.log( response );
+          this.router.navigate(['livre', response.id]);
+        })
     }
   }
 
+  back():void 
+  {
+    history.back();
+  }
 }
